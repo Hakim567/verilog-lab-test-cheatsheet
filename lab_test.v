@@ -6,8 +6,8 @@ module lab_test (clk, input_bit, reset, RA, RB, RA_out, RC, output_bit, present_
   output reg output_bit; //Z no [1:0] since its a bit
   output reg [1:0] present_state, next_state; //PS & NS
 
-  //wrong parameters
-  parameter zero=00, one=01, two=10, three=11;
+  //wrong parameters need to be bits
+  parameter zero=2'b00, one=2'b01, two=2'b10, three=2'b11;
   
   always @(posedge clk or posedge reset) begin//missing @ and begin
    if (present_state == 2'b01) begin
